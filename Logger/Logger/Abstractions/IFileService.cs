@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Logger.Helpers;
 
 namespace Logger.Abstractions
 {
     public interface IFileService
     {
+        StreamHolder CreateLogFile(string dirPath);
+
+        void LogToFile(StreamHolder streamHolder, string report);
+
+        void CloseLogFile(StreamHolder streamHolder);
     }
 }
